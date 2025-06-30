@@ -1,0 +1,31 @@
+{% extends "Contenido/encabezado.html" %}
+
+{% block titulo %}Principal {% endblock titulo %} 
+
+{% block contenido %}
+ <main class="max-w-4xl mx-auto px-4 py-12 md:py-20">
+        <!-- Hero Section -->
+        <section class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                BIENVENIDO A <span class="text-blue-600">CURSÓPOLIS</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-6">
+                La plataforma de cursos online más nueva del mercado
+            </p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Buscamos ofrecer cursos con la información más actualizada para la formación de nuevos profesionales de la información.
+            </p>
+            
+            <!-- Botones de acción -->
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/cursos" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition duration-300 shadow-md">
+                    Ver cursos
+                </a>
+                <a href="/contacto" class="bg-white hover:bg-gray-100 text-blue-600 font-medium py-3 px-6 border border-blue-600 rounded-md transition duration-300 shadow-sm">
+                    Contactar
+                </a>
+            </div>
+        </section>
+    </main>
+
+{% endblock contenido %}

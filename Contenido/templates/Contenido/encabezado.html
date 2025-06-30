@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block titulo %}{% endblock titulo %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <!-- Logo / Nombre (opcional) -->
+            <div class="flex items-center py-4">
+                <span class="font-bold text-gray-800 text-xl">Cursopolis</span>
+            </div>
+            
+            <!-- Links de navegación -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/" class="py-4 px-2 text-gray-700 hover:text-blue-600 transition duration-300 font-medium">
+                    Inicio
+                </a>
+                <a href="/cursos" class="py-4 px-2 text-gray-700 hover:text-blue-600 transition duration-300 font-medium">
+                    Cursos
+                </a>
+                <a href="/contacto" class="py-4 px-2 text-gray-700 hover:text-blue-600 transition duration-300 font-medium">
+                    Contáctanos
+                </a>
+            </div>
+            
+            <!-- Botón móvil (hamburguesa) -->
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Menú móvil (oculto por defecto) -->
+    <div class="hidden mobile-menu">
+        <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-gray-50">
+            <a href="/" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+            <a href="/cursos" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Cursos</a>
+            <a href="/contacto" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Contáctanos</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const btn = document.querySelector(".mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+</script>
+
+    {% block contenido %} {% endblock contenido %}
+  </body>
+</html>
