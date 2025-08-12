@@ -17,13 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Contenido import views
+from cursos import views as cursos_views
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.principal, name="Principal"),
     path('contacto/', views.contacto, name="Contacto"),
-    path('cursos/', views.cursos, name="Cursos"),
+    path('cursos/', cursos_views.cursos, name="Cursos"),
+    path('agregarCurso',cursos_views.registrar,name='AgregarCurso'),
+    path('formEditarCurso/<int:id>/', cursos_views.consultarCursoIndividual, name='ConsultaIndividual'),
+    path('editarCurso/<int:id>/',cursos_views.editarCurso,name='Editar'),
+    path('eliminarCurso/<int:id>/', cursos_views.eliminarCurso,name='Eliminar'),
 ]
 
 if settings.DEBUG:
